@@ -101,7 +101,7 @@ double func_1(double x, int n, double& r)
 	r = x;
 	for (int i = 1; i < n; i++)
 	{
-		r *= -x * x / (2 * i + 1) / (2 * i + 2);
+		r *= -x * x / (2. * i * (2*n-1));
 		S += r;
 	}
 	return S;
@@ -115,7 +115,7 @@ double func_2(double x, int n, double E, int& N)
 		N = 1;
 	for (int i = 1; i < n; i++)
 	{
-		r *= -x * x / (2 * i + 1) / (2 * i + 2);
+		r *= -x * x / (2. * i * (2*n-1));
 		if (fabs(r) > E) {
 			S += r;
 			N++;
